@@ -84,3 +84,16 @@ article {
   display: flex;
   flex-direction: column;
 }
+
+.creatorContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.creator {
+  border: groove;
+  height: 800px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
