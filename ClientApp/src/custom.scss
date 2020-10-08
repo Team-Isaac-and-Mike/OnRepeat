@@ -56,3 +56,20 @@ article {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.charts {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.topArtists {
+  height: 300px;
+  width: 1000px;
+  padding-bottom: 100px;
+}
+
+.topSongs {
+  height: 300px;
+  width: 1000px;
+}
