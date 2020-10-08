@@ -66,10 +66,22 @@ article {
 .topArtists {
   height: 300px;
   width: 1000px;
-  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .topSongs {
   height: 300px;
   width: 1000px;
+}
+
+.top {
+  border: groove;
+  height: 299px;
+  width: 300px;
+}
+
+.topList {
+  display: flex;
+  flex-direction: column;
+  align-items: ;
 }
