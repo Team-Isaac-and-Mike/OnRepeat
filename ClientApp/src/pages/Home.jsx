@@ -13,6 +13,7 @@ export function Home() {
         <Box />
         <Box />
         <Box />
+        <p>test</p>
       </section>
     </div>
   )
