@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+
 namespace OnRepeat.Models
 {
+
     public class ArtistChart
     {
         public int ChartId { get; set; }

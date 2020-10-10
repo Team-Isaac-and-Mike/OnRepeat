@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+
 namespace OnRepeat.Models
 {
+
     public class Playlist
     {
         public int PlaylistID { get; set; }
