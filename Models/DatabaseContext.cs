@@ -14,7 +14,12 @@ namespace OnRepeat.Models
         private static bool LOG_SQL_STATEMENTS_IN_DEVELOPMENT = false;
 
         // Add database tables here
-
+        public DbSet<Artist> Artists { get; set; }
+        public DbSet<ArtistChart> ArtistCharts { get; set; }
+        public DbSet<Playlist> Playlists { get; set; }
+        public DbSet<Track> Tracks { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<TrackChart> TrackCharts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
