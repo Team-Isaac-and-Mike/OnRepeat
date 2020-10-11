@@ -1,0 +1,38 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+li {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.topArtists {
+  height: 300px;
+  width: 1000px;
+  margin-bottom: 100px;
+}
+
+.topSongs {
+  height: 300px;
+  width: 1000px;
+}
+
+.top {
+  border: groove;
+  height: 299px;
+  width: 300px;
+}
+
+.topList {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,19 @@
+article {
+  border: groove;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  align-items: center;
+  margin: 10px;
+}
+
+.boxContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}

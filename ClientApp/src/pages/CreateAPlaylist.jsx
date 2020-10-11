@@ -19,7 +19,7 @@ export function CreateAPlaylist() {
           </p>
           <p>
             <label>What kind of playlist is this:</label>
-            <select name="gerne">
+            <select name="genre">
               <option value="Upbeat">Upbeat</option>S
               <option value="Instrumental">Instrumental</option>
               <option value="Live">Live</option>
