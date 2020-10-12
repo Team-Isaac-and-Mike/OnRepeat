@@ -8,6 +8,8 @@ namespace OnRepeat.Models
         public int PlaylistID { get; set; }
         public string PlaylistName { get; set; }
 
+        public string PlaylistImage { get; set; }
+
         public List<Track> Tracks { get; set; }
     }
 }
