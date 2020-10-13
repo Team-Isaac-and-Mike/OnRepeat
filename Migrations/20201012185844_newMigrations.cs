@@ -3,30 +3,18 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace OnRepeat.Migrations
 {
-    public partial class CreatedDatabseTables : Migration
+    public partial class newMigrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Artists",
-                columns: table => new
-                {
-                    ArtistId = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ArtistName = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Artists", x => x.ArtistId);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Playlists",
                 columns: table => new
                 {
                     PlaylistID = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    PlaylistName = table.Column<string>(nullable: true)
+                    PlaylistName = table.Column<string>(nullable: true),
+                    PlaylistImage = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -56,30 +44,28 @@ namespace OnRepeat.Migrations
                     TrackName = table.Column<string>(nullable: true),
                     TrackGenre = table.Column<string>(nullable: true),
                     TrackArtist = table.Column<string>(nullable: true),
-                    PlaylistID = table.Column<int>(nullable: true)
+                    TrackImage = table.Column<string>(nullable: true),
+                    PlaylistId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tracks", x => x.TrackId);
                     table.ForeignKey(
-                        name: "FK_Tracks_Playlists_PlaylistID",
-                        column: x => x.PlaylistID,
+                        name: "FK_Tracks_Playlists_PlaylistId",
+                        column: x => x.PlaylistId,
                         principalTable: "Playlists",
                         principalColumn: "PlaylistID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tracks_PlaylistID",
+                name: "IX_Tracks_PlaylistId",
                 table: "Tracks",
-                column: "PlaylistID");
+                column: "PlaylistId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Artists");
-
             migrationBuilder.DropTable(
                 name: "Tracks");
 

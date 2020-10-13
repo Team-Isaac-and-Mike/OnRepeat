@@ -9,5 +9,10 @@ namespace OnRepeat.Models
         public string TrackGenre { get; set; }
 
         public string TrackArtist { get; set; }
+
+        public string TrackImage { get; set; }
+
+        public int PlaylistId { get; set; }
+        public Playlist Playlist { get; set; }
     }
 }
