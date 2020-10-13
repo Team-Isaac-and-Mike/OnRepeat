@@ -13,5 +13,6 @@ namespace OnRepeat.Models
         public string TrackImage { get; set; }
 
         public int PlaylistId { get; set; }
+        public Playlist Playlist { get; set; }
     }
 }

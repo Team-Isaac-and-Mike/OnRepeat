@@ -6,11 +6,13 @@ import { Home } from './pages/Home'
 import { MyPlaylists } from './pages/MyPlaylists'
 import { MyCharts } from './pages/MyCharts'
 import { CreateAPlaylist } from './pages/CreateAPlaylist'
+import LoginButton from './LoginButton'
 
 export function App() {
   return (
     <main>
       <Header />
+      <LoginButton />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/playlists" component={MyPlaylists} />
