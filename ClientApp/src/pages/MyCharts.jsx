@@ -3,94 +3,96 @@ import React from 'react'
 export function MyCharts() {
   return (
     <div>
-      <section className="charts">
-        <article className="topArtists">
-          
+      <section className="chartsSection">
+          <h2> Top Artists</h2>
+        <article className="topArticle">
+          <h3>Month</h3>
               <ul className="topList">
-                <li>1. Kanye West</li>
-                <li>2. Juls</li>
-                <li>3. Kid Cudi</li>
-                <li>4. A$AP Rocky</li>
-                <li>5. Tyler the Creator</li>
-                <li>6. Mac Miller</li>
-                <li>7. Jay Cole</li>
-                <li>8. JID</li>
-                <li>9. Migos</li>
-                <li>10. WizKid</li>
+                <li className="topItems">1. Kanye West</li>
+                <li className="topItems">2. Juls</li>
+                <li className="topItems">3. Kid Cudi</li>
+                <li className="topItems">4. A$AP Rocky</li>
+                <li className="topItems">5. Tyler the Creator</li>
+                <li className="topItems">6. Mac Miller</li>
+                <li className="topItems">7. Jay Cole</li>
+                <li className="topItems">8. JID</li>
+                <li className="topItems">9. Migos</li>
+                <li className="topItems">10. WizKid</li>
                 </ul>
               
-            
+            <h3>Six Months</h3>
               <ul className="topList">
-                <li>1. Kanye West</li>
-                <li>2. Juls</li>
-                <li>3. Kid Cudi</li>
-                <li>4. A$AP Rocky</li>
-                <li>5. Tyler the Creator</li>
-                <li>6. Mac Miller</li>
-                <li>7. Jay Cole</li>
-                <li>8. JID</li>
-                <li>9. Migos</li>
-                <li>10. WizKid</li>
+                <li className="topItems">1. Kanye West</li>
+                <li className="topItems">2. Juls</li>
+                <li className="topItems">3. Kid Cudi</li>
+                <li className="topItems">4. A$AP Rocky</li>
+                <li className="topItems">5. Tyler the Creator</li>
+                <li className="topItems">6. Mac Miller</li>
+                <li className="topItems">7. Jay Cole</li>
+                <li className="topItems">8. JID</li>
+                <li className="topItems">9. Migos</li>
+                <li className="topItems">10. WizKid</li>
               </ul>
 
-
+          <h3>All Time</h3>
               <ul className="topList">
-                <li>1. Kanye West</li>
-                <li>2. Juls</li>
-                <li>3. Kid Cudi</li>
-                <li>4. A$AP Rocky</li>
-                <li>5. Tyler the Creator</li>
-                <li>6. Mac Miller</li>
-                <li>7. Jay Cole</li>
-                <li>8. JID</li>
-                <li>9. Migos</li>
-                <li>10. WizKid</li>
+                <li className="topItems">1. Kanye West</li>
+                <li className="topItems">2. Juls</li>
+                <li className="topItems">3. Kid Cudi</li>
+                <li className="topItems">4. A$AP Rocky</li>
+                <li className="topItems">5. Tyler the Creator</li>
+                <li className="topItems">6. Mac Miller</li>
+                <li className="topItems">7. Jay Cole</li>
+                <li className="topItems">8. JID</li>
+                <li className="topItems">9. Migos</li>
+                <li className="topItems">10. WizKid</li>
               </ul>
 
 
         </article>
 
-        <article className="topSongs">
-          
+          <h2>Top Tracks</h2>
+        <article className="topArticle">
+          <h3>Month</h3>
               <ul className="topList">
-                <li>1. Kanye West</li>
-                <li>2. Juls</li>
-                <li>3. Kid Cudi</li>
-                <li>4. A$AP Rocky</li>
-                <li>5. Tyler the Creator</li>
-                <li>6. Mac Miller</li>
-                <li>7. Jay Cole</li>
-                <li>8. JID</li>
-                <li>9. Migos</li>
-                <li>10. WizKid</li>
+              <li className="topItems">1. Kanye West</li>
+                <li className="topItems">2. Juls</li>
+                <li className="topItems">3. Kid Cudi</li>
+                <li className="topItems">4. A$AP Rocky</li>
+                <li className="topItems">5. Tyler the Creator</li>
+                <li className="topItems">6. Mac Miller</li>
+                <li className="topItems">7. Jay Cole</li>
+                <li className="topItems">8. JID</li>
+                <li className="topItems">9. Migos</li>
+                <li className="topItems">10. WizKid</li>
               </ul>
 
-            
+            <h3>Six Months</h3>
               <ul className="topList">
-                <li>1. Kanye West</li>
-                <li>2. Juls</li>
-                <li>3. Kid Cudi</li>
-                <li>4. A$AP Rocky</li>
-                <li>5. Tyler the Creator</li>
-                <li>6. Mac Miller</li>
-                <li>7. Jay Cole</li>
-                <li>8. JID</li>
-                <li>9. Migos</li>
-                <li>10. WizKid</li>
+              <li className="topItems">1. Kanye West</li>
+                <li className="topItems">2. Juls</li>
+                <li className="topItems">3. Kid Cudi</li>
+                <li className="topItems">4. A$AP Rocky</li>
+                <li className="topItems">5. Tyler the Creator</li>
+                <li className="topItems">6. Mac Miller</li>
+                <li className="topItems">7. Jay Cole</li>
+                <li className="topItems">8. JID</li>
+                <li className="topItems">9. Migos</li>
+                <li className="topItems">10. WizKid</li>
               </ul>
 
-            
+            <h3>All Time</h3>
               <ul className="topList">
-                <li>1. Kanye West</li>
-                <li>2. Juls</li>
-                <li>3. Kid Cudi</li>
-                <li>4. A$AP Rocky</li>
-                <li>5. Tyler the Creator</li>
-                <li>6. Mac Miller</li>
-                <li>7. Jay Cole</li>
-                <li>8. JID</li>
-                <li>9. Migos</li>
-                <li>10. WizKid</li>
+              <li className="topItems">1. Kanye West</li>
+                <li className="topItems">2. Juls</li>
+                <li className="topItems">3. Kid Cudi</li>
+                <li className="topItems">4. A$AP Rocky</li>
+                <li className="topItems">5. Tyler the Creator</li>
+                <li className="topItems">6. Mac Miller</li>
+                <li className="topItems">7. Jay Cole</li>
+                <li className="topItems">8. JID</li>
+                <li className="topItems">9. Migos</li>
+                <li className="topItems">10. WizKid</li>
               </ul>
             
           

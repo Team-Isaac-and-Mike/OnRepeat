@@ -1,4 +1,4 @@
-article {
+.boxArticle {
   border: groove;
   height: 300px;
   width: 300px;
@@ -8,12 +8,12 @@ article {
   justify-content: center;
 
   align-items: center;
-  margin: 10px;
+  // margin: 10px;
 }
 
 .boxContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }

@@ -11,13 +11,13 @@ export function Header() {
       </header>
       <nav>
         <ul className="navBar">
-          <li>
+          <li className= "navItem">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className= "navItem">
             <Link to="/playlists"> My Playlists </Link>
           </li>
-          <li>
+          <li className= "navItem">
             <Link to="/charts">My Charts</Link>
           </li>
         </ul>

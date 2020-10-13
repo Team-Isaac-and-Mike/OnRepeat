@@ -9,7 +9,8 @@ import { CreateAPlaylist } from './pages/CreateAPlaylist'
 
 export function App() {
   return (
-    <main>
+    
+    <main> 
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />

@@ -3,32 +3,27 @@ ul {
   flex-direction: row;
   list-style: none;
 }
+.topList {
+  display: flex;
+  flex-direction: column;
+  border: groove;
+  list-style: inherit;
+}
 
 li {
   padding-left: 30px;
   padding-right: 30px;
 }
 
-.charts {
+.chartsSection {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.topArtists {
-  height: 800px;
+.topArticle {
+  height: 1000px;
   // width: 1000px;
   // margin-bottom: 100px;
-}
-
-.topSongs {
-  height: 800px;
-  // width: 1000px;
-}
-
-.topList {
-  display: flex;
-  flex-direction: column;
-  border: groove;
 }

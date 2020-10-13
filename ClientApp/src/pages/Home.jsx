@@ -13,8 +13,6 @@ export function Home() {
         <Box />
         <Box />
         <Box />
-        <p>test</p>
-        <p>test 2</p>
       </section>
     </div>
   )
