@@ -2,7 +2,7 @@ import React from 'react'
 
 export function CreateAPlaylist() {
   return (
-    <div>
+    <div className="createPlaylist">
       <section className="creatorContainer">
         <article className="creator">
           <p>

@@ -3,7 +3,7 @@ import { Box } from '../components/Box'
 
 export function Home() {
   return (
-    <div>
+    <div className="home">
       <section className="boxContainer">
         <Box />
         <Box />

@@ -2,7 +2,7 @@ import React from 'react'
 
 export function MyCharts() {
   return (
-    <div>
+    <div className="myCharts">
       <section className="chartsSection">
           <h2> Top Artists</h2>
         <article className="topArticle">

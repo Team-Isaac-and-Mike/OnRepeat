@@ -4,9 +4,9 @@ import { Box } from '../components/Box'
 
 export function MyPlaylists() {
   return (
-    <div>
+    <div className="myPlaylists">
       <section className="boxContainer">
-        <article>
+        <article className="createArticle">
           <Link to="/create">Create a Playlist</Link>
         </article>
         <Box />
