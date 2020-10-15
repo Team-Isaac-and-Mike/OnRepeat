@@ -13,6 +13,7 @@ import {SpotifyAuthCallback} from './SpotifyCallBack'
 
 
 export function App() {
+  
   return (
     <main> 
       <Header />
@@ -22,10 +23,11 @@ export function App() {
         <Route exact path="/playlists" component={MyPlaylists} />
         <Route exact path="/charts" component={MyCharts} />
         <Route exact path="/create" component={CreateAPlaylist} /> 
-        <Route path="/callback" component={SpotifyAuthCallback}>
+        <Route exact path="/callback" component={SpotifyAuthCallback}>
           <SpotifyAuthCallback />
         </Route>
       </Switch>
     </main>
   )
 }
+export default App

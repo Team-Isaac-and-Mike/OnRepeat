@@ -9,13 +9,13 @@ export function SpotifyAuthCallback() {
   useEffect(() => {
     async function requestToken() {
       const BasicAuth = btoa(
-        `${process.env.REACT_APP_SPOTIFY_CLIENT_ID}:${process.env.REACT_APP_SPOTIFY_CLIENT_SECRET}`
+        "a89620779d994eb7b01ff6ee1bb88940:062649b4d02c426cba9f78d9d3d823a3"
       )
 
       const request = {
         grant_type: 'authorization_code',
         code,
-        redirect_uri: process.env.REACT_APP_SPOTIFY_CALLBACK_URL,
+        redirect_uri: "http://localhost:3000/callback",
       }
 
       const response = await fetch('https://accounts.spotify.com/api/token', {
