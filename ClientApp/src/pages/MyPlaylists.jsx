@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Box } from '../components/Box'
+import { PlayLists } from '../components/Box'
 
 export function MyPlaylists() {
   return (
@@ -9,13 +9,8 @@ export function MyPlaylists() {
         <article className="createArticle">
           <Link to="/create">Create a Playlist</Link>
         </article>
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
+        <PlayLists />
+        
       </section>
     </div>
   )

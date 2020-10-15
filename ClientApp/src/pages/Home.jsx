@@ -1,18 +1,12 @@
 import React from 'react'
-import { Box } from '../components/Box'
+import { PlayLists } from '../components/Box'
 
 export function Home() {
   return (
     <div className="home">
       <section className="boxContainer">
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
+        <PlayLists />
+        
       </section>
     </div>
   )
