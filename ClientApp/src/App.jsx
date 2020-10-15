@@ -6,11 +6,14 @@ import { Home } from './pages/Home'
 import { MyPlaylists } from './pages/MyPlaylists'
 import { MyCharts } from './pages/MyCharts'
 import { CreateAPlaylist } from './pages/CreateAPlaylist'
-import LoginButton from './LoginButton'
+import {LoginButton} from './LoginButton'
+import {SpotifyAuthCallback} from './SpotifyCallBack'
+
+
+
 
 export function App() {
   return (
-    
     <main> 
       <Header />
       <LoginButton />
@@ -18,7 +21,10 @@ export function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/playlists" component={MyPlaylists} />
         <Route exact path="/charts" component={MyCharts} />
-        <Route exact path="/create" component={CreateAPlaylist} />
+        <Route exact path="/create" component={CreateAPlaylist} /> 
+        <Route path="/callback" component={SpotifyAuthCallback}>
+          <SpotifyAuthCallback />
+        </Route>
       </Switch>
     </main>
   )
