@@ -1,31 +1,61 @@
 .myCharts {
-  // ul {
-  //   display: flex;
-  //   flex-direction: row;
-  //   list-style: none;
-  // }
-  .topList {
+  h2 {
     display: flex;
-    flex-direction: column;
-    border: groove;
-    list-style: inherit;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid blue;
   }
 
-  // li {
-  //   padding-left: 30px;
-  //   padding-right: 30px;
-  // }
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid purple;
+  }
 
   .chartsSection {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border: 1px solid yellow;
   }
 
   .topArticle {
-    height: 1000px;
-    // width: 1000px;
-    // margin-bottom: 100px;
+    height: 950px;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid green;
+  }
+
+  .topList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    border: 1px solid red;
+    padding: 0px;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .myCharts {
+    .chartsSection {
+      // background-color: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      border: 1px solid yellow;
+    }
+    .topArticle {
+      height: 950px;
+      width: 1200px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid green;
+    }
   }
 }

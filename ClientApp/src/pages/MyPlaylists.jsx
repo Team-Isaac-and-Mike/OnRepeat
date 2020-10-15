@@ -16,7 +16,6 @@ export function MyPlaylists() {
         <Box />
         <Box />
         <Box />
-        <Box />
       </section>
     </div>
   )

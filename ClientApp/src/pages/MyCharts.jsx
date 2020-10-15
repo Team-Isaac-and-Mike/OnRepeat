@@ -4,8 +4,8 @@ export function MyCharts() {
   return (
     <div className="myCharts">
       <section className="chartsSection">
-          <h2> Top Artists</h2>
         <article className="topArticle">
+          <h2> Top Artists</h2>
           <h3>Month</h3>
               <ul className="topList">
                 <li className="topItems">1. Kanye West</li>
@@ -51,8 +51,8 @@ export function MyCharts() {
 
         </article>
 
-          <h2>Top Tracks</h2>
         <article className="topArticle">
+          <h2>Top Tracks</h2>
           <h3>Month</h3>
               <ul className="topList">
               <li className="topItems">1. Kanye West</li>

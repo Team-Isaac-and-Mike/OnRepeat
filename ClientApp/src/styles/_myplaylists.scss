@@ -1,23 +1,49 @@
 .myPlaylists {
-  .createArticle {
-    border: groove;
-    height: 300px;
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    align-items: center;
-    // margin: 10px;
-  }
+  display: flex;
+  justify-content: center;
+  border: 1px solid blue;
 
   .boxContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 1rem;
+    justify-content: space-around;
+    // margin: 1rem;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1200px;
+
+    border: 1px solid red;
+  }
+
+  .createArticle {
+    border: groove;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid yellow;
+    // margin: 1rem;
+  }
+
+  .boxArticle {
+    border: groove;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+    // margin: 1rem;
+  }
+  img {
+    height: 250px;
+    width: 250px;
   }
 }
