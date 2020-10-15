@@ -20,6 +20,10 @@ export function Header() {
           <li className= "navItem">
             <Link to="/charts">My Charts</Link>
           </li>
+          <li>
+          <button>hello</button>
+          <button>Huh</button>
+          </li>
         </ul>
       </nav>
     </div>
