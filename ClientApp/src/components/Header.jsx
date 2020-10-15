@@ -22,6 +22,7 @@ export function Header() {
           </li>
           <li>
           <button>hello</button>
+          <button>Huh</button>
           </li>
         </ul>
       </nav>
