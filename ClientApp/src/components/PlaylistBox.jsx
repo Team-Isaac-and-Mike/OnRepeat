@@ -38,8 +38,8 @@ console.log(playlists)
     <ul className="playlistContainer">
 
       {playlists.length > 0 && playlists.map(playlist => (
-        <article>
-          <li key={playlist.name}>{playlist.name}</li>
+        <article className="PlaylistBox">
+          <li><h2 key={playlist.name}>{playlist.name}</h2></li>
           <img src={playlist.images[0].url}
             height="400px"
             width="400px" />
