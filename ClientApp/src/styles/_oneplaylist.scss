@@ -12,5 +12,9 @@
   article {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    .track {
+      border: 1px solid red;
+    }
   }
 }

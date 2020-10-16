@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 export function Loading() {
-  return(
+  return (
     <div>
       <p>Loading</p>
     </div>
@@ -26,6 +26,7 @@ export function PlayListsBox() {
       const json = await response.json()
 
       setPlaylists(json.items)
+      console.log(json)
     }
 
     fetchPlaylists()
@@ -34,22 +35,19 @@ export function PlayListsBox() {
   if (!accessToken) {
     return <p>You aren't logged in</p>
   }
-console.log(playlists)
+
   return (
     <ul className="playlistContainer">
-
-      {playlists.length > 0 && playlists.map(playlist => (
-        <article className="PlaylistBox">
-          <li key={playlist.name}><Link to={"/playlist"}>{playlist.name}</Link></li>
-          <img src={playlist.images[0].url}
-            height="400px"
-            width="400px" />
-        </article>
-        
-        
-      ))}
-      {playlists.length === 0 && <h1>FUCK</h1>}
+      {playlists.length > 0 &&
+        playlists.map((playlist) => (
+          <article className="PlaylistBox">
+            <li key={playlist.name}>
+              <Link to={`/playlist/${playlist.id}`}>{playlist.name}</Link>
+            </li>
+            <img src={playlist.images[0].url} height="400px" width="400px" />
+          </article>
+        ))}
+      {playlists.length === 0 && <h1>LOADING...</h1>}
     </ul>
   )
 }
-
