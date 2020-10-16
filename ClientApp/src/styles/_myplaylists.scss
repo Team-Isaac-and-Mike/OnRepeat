@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   border: 1px solid blue;
+  margin-top: 1rem;
 
   .boxContainer {
     display: flex;
@@ -14,19 +15,21 @@
     width: 100vw;
     max-width: 1200px;
 
-    border: 1px solid red;
+    border: 8px solid rgb(140, 8, 216);
+    border-radius: 12px;
   }
 
   .createArticle {
-    border: groove;
-    height: 250px;
-    width: 250px;
+    font-size: 2rem;
+    height: 70px;
+    width: 400px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 1px solid yellow;
+    border-bottom: 8px solid rgb(28, 243, 28);
+    border-radius: 6px;
     // margin: 1rem;
   }
 
@@ -45,5 +48,11 @@
   img {
     height: 250px;
     width: 250px;
+  }
+
+  .PlaylistBox {
+    list-style: none;
+    font-size: 24px;
+    padding: 10px;
   }
 }
