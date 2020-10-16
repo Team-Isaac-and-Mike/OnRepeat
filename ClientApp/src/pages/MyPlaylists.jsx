@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { PlayLists } from '../components/Box'
+import { PlayLists } from '../components/PlaylistBox'
 
 export function MyPlaylists() {
   return (

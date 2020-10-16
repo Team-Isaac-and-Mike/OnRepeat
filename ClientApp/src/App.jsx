@@ -17,7 +17,7 @@ export function App() {
   return (
     <main> 
       <Header />
-      <button>hello</button>
+      
       <LoginButton />
       <Switch>
         <Route exact path="/" component={Home} />

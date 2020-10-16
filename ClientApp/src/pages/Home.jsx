@@ -1,11 +1,11 @@
 import React from 'react'
-import { PlayLists } from '../components/Box'
+import { PlayListsBox } from '../components/PlaylistBox'
 
 export function Home() {
   return (
     <div className="home">
       <section className="boxContainer">
-        <PlayLists />
+        <PlayListsBox />
         
       </section>
     </div>

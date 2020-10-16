@@ -7,7 +7,7 @@ export function Loading() {
   )
 }
 
-export function PlayLists() {
+export function PlayListsBox() {
   const [playlists, setPlaylists] = useState([])
   const accessToken = localStorage.getItem('SpotifyAccessToken')
 
