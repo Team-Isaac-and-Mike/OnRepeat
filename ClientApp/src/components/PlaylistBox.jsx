@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 export function Loading() {
   return(
     <div>
@@ -39,7 +40,7 @@ console.log(playlists)
 
       {playlists.length > 0 && playlists.map(playlist => (
         <article className="PlaylistBox">
-          <li key={playlist.name}>{playlist.name}</li>
+          <li key={playlist.name}><Link to={"/playlist"}>{playlist.name}</Link></li>
           <img src={playlist.images[0].url}
             height="400px"
             width="400px" />

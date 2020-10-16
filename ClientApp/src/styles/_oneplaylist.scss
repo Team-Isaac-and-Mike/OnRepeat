@@ -1,0 +1,16 @@
+.onePlaylist {
+  margin-left: 200px;
+  margin-right: 200px;
+  display: flex;
+  justify-content: center;
+
+  .playlistSection {
+    height: 1200px;
+    width: 1200px;
+  }
+
+  article {
+    display: flex;
+    justify-content: center;
+  }
+}
