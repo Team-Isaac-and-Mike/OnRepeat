@@ -9,12 +9,37 @@
     width: 1200px;
   }
 
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+  }
+
   article {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     .track {
-      border: 1px solid red;
+      border: 1px solid grey;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+
+      li {
+        padding: 10px;
+      }
     }
   }
 }
