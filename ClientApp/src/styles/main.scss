@@ -14,12 +14,11 @@ html {
 
 main {
   color: white;
-  background: rgb(9, 9, 9);
-  background: radial-gradient(
-    circle,
-    rgba(9, 9, 9, 1) 0%,
-    rgba(83, 91, 84, 1) 50%,
-    rgba(191, 194, 189, 1) 100%
+  background: rgb(6, 5, 23);
+  background: linear-gradient(
+    180deg,
+    rgba(6, 5, 23, 1) 0%,
+    rgba(48, 48, 54, 1) 35%
   );
   // margin-left: auto;
   // margin-right: auto;

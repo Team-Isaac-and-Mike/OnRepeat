@@ -10,7 +10,7 @@
     justify-content: space-around;
     // margin: 1rem;
     align-items: center;
-    height: 100vh;
+    height: 1800px;
     width: 100vw;
     max-width: 1200px;
 
@@ -36,5 +36,7 @@
   }
   .PlaylistBox {
     list-style: none;
+    font-size: 24px;
+    padding: 10px;
   }
 }
