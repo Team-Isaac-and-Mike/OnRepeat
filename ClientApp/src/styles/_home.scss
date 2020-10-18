@@ -9,13 +9,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    // margin: 1rem;
+    // // margin: 1rem;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
-    max-width: 1200px;
-    border: 8px solid rgb(140, 8, 216);
-    border-radius: 12px;
+    // // height: 100vh;
+    // width: 100vw;
+    // max-width: 1200px;
+
+    // border: 8px solid rgb(140, 8, 216);
+    // border-radius: 12px;
   }
 
   .boxArticle {
@@ -39,5 +40,19 @@
     list-style: none;
     font-size: 24px;
     padding: 10px;
+  }
+  a:hover {
+    color: greenyellow;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .boxContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-auto-rows: 250px;
+    justify-items: center;
+    align-items: center;
+    max-width: 1200px;
   }
 }
