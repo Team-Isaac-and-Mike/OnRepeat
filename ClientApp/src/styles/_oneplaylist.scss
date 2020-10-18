@@ -25,6 +25,22 @@
   .imageContainer {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin-top: 10px;
+
+    .trackCategory {
+      margin-left: 75px;
+      width: 350px;
+    }
+
+    .artistCategory {
+      width: 350px;
+    }
   }
 
   article {
@@ -32,10 +48,32 @@
     justify-content: center;
     flex-direction: column;
     .track {
-      border: 1px solid grey;
+      // border: 1px solid grey;
       list-style: none;
       display: flex;
+      justify-content: center;
       flex-direction: row;
+
+      .trackDiv {
+        width: 350px;
+        justify-content: center;
+        display: flex;
+        border: groove;
+      }
+
+      .artistDiv {
+        width: 350px;
+        justify-content: center;
+        display: flex;
+        border: groove;
+      }
+
+      .albumDiv {
+        width: 350px;
+        display: flex;
+        justify-content: center;
+        border: groove;
+      }
 
       li {
         padding: 10px;

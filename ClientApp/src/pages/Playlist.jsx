@@ -70,19 +70,28 @@ export function Playlist() {
       <section className="playlistSection">
         <article>
           <h2>{playlists.name}</h2>
-          {/* {playlistImage.map((image) => ( */}
-          {/* <img src={image.url} />
-          ))} */}
+
           <div className="imageContainer">
             <img src={playlistImage} />
           </div>
+          <ul className="categoryList">
+            <li className="trackCategory">Track</li>
+            <li className="artistCategory">Artist</li>
+            <li className="albumCategory">Album</li>
+          </ul>
           {playlist.map((track) => (
             <ul className="track">
-              <li>{track.track.name}</li>
-              {track.track.artists.map((artist) => (
-                <li>{artist.name}</li>
-              ))}
-              <li>{track.track.album.name}</li>
+              <div className="trackDiv">
+                <li>{track.track.name}</li>
+              </div>
+              <div className="artistDiv">
+                {track.track.artists.map((artist) => (
+                  <li>{artist.name}</li>
+                ))}
+              </div>
+              <div className="albumDiv">
+                <li>{track.track.album.name}</li>
+              </div>
             </ul>
           ))}
         </article>
