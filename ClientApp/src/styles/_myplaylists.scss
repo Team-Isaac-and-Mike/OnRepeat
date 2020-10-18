@@ -26,6 +26,18 @@
     // border: 8px solid rgb(140, 8, 216);
     // border-radius: 12px;
   }
+  .boxArticle {
+    border: groove;
+    height: 250px;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid green;
+    // margin: 1rem;
+  }
 
   .createArticle {
     font-size: 2rem;
@@ -41,18 +53,6 @@
     // margin: 1rem;
   }
 
-  .boxArticle {
-    border: groove;
-    height: 250px;
-    width: 250px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    // border: 1px solid green;
-    // margin: 1rem;
-  }
   img {
     height: 250px;
     width: 250px;

@@ -2,15 +2,23 @@
   display: flex;
   justify-content: center;
   border: 1px solid blue;
-  margin-top: 1rem;
+  margin: auto;
+
+  .playlistContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0px;
+  }
 
   .boxContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     // // margin: 1rem;
-    align-items: center;
+    // align-items: center;
     // // height: 100vh;
     // width: 100vw;
     // max-width: 1200px;
