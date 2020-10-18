@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: row;
     list-style: none;
-    border: 8px solid rgb(240, 124, 16);
+    // border: 8px solid rgb(240, 124, 16);
     border-radius: 12px;
   }
 
@@ -28,5 +28,9 @@
     flex-direction: row;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  a:hover {
+    color: purple;
   }
 }
