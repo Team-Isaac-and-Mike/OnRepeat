@@ -41,13 +41,17 @@ export function PlayListsBox() {
   }
   console.log(playlists)
   return (
-    <ul className="playlistContainer">
+    <div className="playlistContainer">
       {playlists.length > 0 &&
         playlists.map((playlist) => (
           <article className="PlaylistBox">
-            <li key={playlist.name}>
+            <span
+              key={playlist.name}
+              className="playlistTitle"
+              title={playlist.name}
+            >
               <Link to={`/playlist/${playlist.id}`}>{playlist.name}</Link>
-            </li>
+            </span>
             <img
               src={
                 playlist.images.length > 0
@@ -60,6 +64,6 @@ export function PlayListsBox() {
           </article>
         ))}
       {playlists.length === 0 && <h1>LOADING...</h1>}
-    </ul>
+    </div>
   )
 }
