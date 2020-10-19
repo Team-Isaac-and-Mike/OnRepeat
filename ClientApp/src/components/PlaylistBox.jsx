@@ -24,9 +24,10 @@ export function PlayListsBox() {
         },
       })
       const json = await response.json()
-
-      setPlaylists(json.items)
       console.log(json)
+      if (json.items) {
+        setPlaylists(json.items)
+      }
     }
 
     fetchPlaylists()
@@ -35,7 +36,7 @@ export function PlayListsBox() {
   if (!accessToken) {
     return <p>You aren't logged in</p>
   }
-
+  console.log(playlists)
   return (
     <ul className="playlistContainer">
       {playlists.length > 0 &&
