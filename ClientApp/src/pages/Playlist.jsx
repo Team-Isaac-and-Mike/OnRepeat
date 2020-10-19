@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+import playlistDefaultImage from '../images/playlist.jpg'
+
 export function Playlist() {
   const params = useParams()
   const id = params.id
@@ -46,7 +48,13 @@ export function Playlist() {
     )
     const json = await response.json()
 
-    setPlaylistImage(json[1].url)
+    if (json[1]) {
+      setPlaylistImage(json[1].url)
+    } else if (json[0]) {
+      setPlaylistImage(json[0].url)
+    } else {
+      setPlaylistImage(playlistDefaultImage)
+    }
     console.log(json)
   }
 
