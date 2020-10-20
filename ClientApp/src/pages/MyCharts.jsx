@@ -80,6 +80,7 @@ export function MyCharts() {
 
     fetchChartArtistAllTime()
   }, [accessToken])
+
   useEffect(() => {
     if (!accessToken) {
       return
