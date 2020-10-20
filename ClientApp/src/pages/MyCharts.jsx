@@ -159,71 +159,154 @@ export function MyCharts() {
       <section className="chartsSection">
         <article className="topArticle">
           <h2> Top Artists</h2>
-          <h3>PastMonth</h3>
-          {chartArtistMonth.map((monthArtist) => (
-            <ul className="topList">
-              <li>{monthArtist.name}</li>
-            </ul>
-          ))}
+          <div>
+            <h3>Past Month</h3>
+            <div className="divContainer">
+              <div>
+                <ul className="numberList">
+                  <li>1.</li>
+                  <li>2.</li>
+                  <li>3.</li>
+                  <li>4.</li>
+                  <li>5.</li>
+                  <li>6.</li>
+                  <li>7.</li>
+                  <li>8.</li>
+                  <li>9.</li>
+                  <li>10.</li>
+                </ul>
+              </div>
+              <div>
+                <ul className="topList">
+                  {chartArtistMonth.map((monthArtist) => (
+                    <li>{monthArtist.name}</li>
+                  ))}
+                </ul>
+                {/* <ul className="topList"> */}
+                {/* {chartArtistMonth.map((monthArtistImage) => (
+                  <li>{monthArtistImage.images}</li>
+                ))} */}
+                {/* </ul> */}
+              </div>
+            </div>
+          </div>
 
           <h3>Six Months</h3>
-          {chartArtist6Month.map((sixMonthArtist) => (
+          <div className="divContainer">
+            <div>
+              <ul className="numberList">
+                <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+                <li>4.</li>
+                <li>5.</li>
+                <li>6.</li>
+                <li>7.</li>
+                <li>8.</li>
+                <li>9.</li>
+                <li>10.</li>
+              </ul>
+            </div>
             <ul className="topList">
-              <li>{sixMonthArtist.name}</li>
+              {chartArtist6Month.map((sixMonthArtist) => (
+                <li>{sixMonthArtist.name}</li>
+              ))}
             </ul>
-          ))}
+          </div>
 
           <h3>All Time</h3>
-          {chartArtistAllTime.map((allTimeArtist) => (
+          <div className="divContainer">
+            <div>
+              <ul className="numberList">
+                <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+                <li>4.</li>
+                <li>5.</li>
+                <li>6.</li>
+                <li>7.</li>
+                <li>8.</li>
+                <li>9.</li>
+                <li>10.</li>
+              </ul>
+            </div>
             <ul className="topList">
-              <li>{allTimeArtist.name}</li>
+              {chartArtistAllTime.map((allTimeArtist) => (
+                <li>{allTimeArtist.name}</li>
+              ))}
             </ul>
-          ))}
+          </div>
         </article>
 
         <article className="topArticle">
           <h2>Top Tracks</h2>
-          <h3>Month</h3>
-          <ul className="topList">
-            <li className="topItems">1. Kanye West</li>
-            <li className="topItems">2. Juls</li>
-            <li className="topItems">3. Kid Cudi</li>
-            <li className="topItems">4. A$AP Rocky</li>
-            <li className="topItems">5. Tyler the Creator</li>
-            <li className="topItems">6. Mac Miller</li>
-            <li className="topItems">7. Jay Cole</li>
-            <li className="topItems">8. JID</li>
-            <li className="topItems">9. Migos</li>
-            <li className="topItems">10. WizKid</li>
-          </ul>
-
+          <h3>Past Month</h3>
+          <div className="divContainer">
+            <div>
+              <ul className="numberList">
+                <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+                <li>4.</li>
+                <li>5.</li>
+                <li>6.</li>
+                <li>7.</li>
+                <li>8.</li>
+                <li>9.</li>
+                <li>10.</li>
+              </ul>
+            </div>
+            <ul className="topList">
+              {chartTrackMonth.map((trackMonth) => (
+                <li>{trackMonth.name}</li>
+              ))}
+            </ul>
+          </div>
           <h3>Six Months</h3>
-          <ul className="topList">
-            <li className="topItems">1. Kanye West</li>
-            <li className="topItems">2. Juls</li>
-            <li className="topItems">3. Kid Cudi</li>
-            <li className="topItems">4. A$AP Rocky</li>
-            <li className="topItems">5. Tyler the Creator</li>
-            <li className="topItems">6. Mac Miller</li>
-            <li className="topItems">7. Jay Cole</li>
-            <li className="topItems">8. JID</li>
-            <li className="topItems">9. Migos</li>
-            <li className="topItems">10. WizKid</li>
-          </ul>
+          <div className="divContainer">
+            <div>
+              <ul className="numberList">
+                <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+                <li>4.</li>
+                <li>5.</li>
+                <li>6.</li>
+                <li>7.</li>
+                <li>8.</li>
+                <li>9.</li>
+                <li>10.</li>
+              </ul>
+            </div>
+            <ul className="topList">
+              {chartTrack6Month.map((track6Month) => (
+                <li>{track6Month.name}</li>
+              ))}
+            </ul>
+          </div>
 
           <h3>All Time</h3>
-          <ul className="topList">
-            <li className="topItems">1. Kanye West</li>
-            <li className="topItems">2. Juls</li>
-            <li className="topItems">3. Kid Cudi</li>
-            <li className="topItems">4. A$AP Rocky</li>
-            <li className="topItems">5. Tyler the Creator</li>
-            <li className="topItems">6. Mac Miller</li>
-            <li className="topItems">7. Jay Cole</li>
-            <li className="topItems">8. JID</li>
-            <li className="topItems">9. Migos</li>
-            <li className="topItems">10. WizKid</li>
-          </ul>
+          <div className="divContainer">
+            <div>
+              <ul className="numberList">
+                <li>1.</li>
+                <li>2.</li>
+                <li>3.</li>
+                <li>4.</li>
+                <li>5.</li>
+                <li>6.</li>
+                <li>7.</li>
+                <li>8.</li>
+                <li>9.</li>
+                <li>10.</li>
+              </ul>
+            </div>
+            <ul className="topList">
+              {chartTrackAllTime.map((trackAllTime) => (
+                <li>{trackAllTime.name}</li>
+              ))}
+            </ul>
+          </div>
         </article>
       </section>
     </div>
