@@ -5,33 +5,26 @@ export function CreateAPlaylist() {
   const [chartArtistMonth, setChartArtistMonth] = useState([])
   const [chartTrackMonth, setChartTrackMonth] = useState([])
   const accessToken = localStorage.getItem('SpotifyAccessToken')
-  const [seedArtist, setSeedArtist] = useState([])
-  const [seedTrack, setSeedTrack] = useState([])
-  const [seedGenre, setSeedGenre] = useState([])
+  const [seedArtist, setSeedArtist] = useState('')
+  const [seedTrack, setSeedTrack] = useState('')
+  const [seedGenre, setSeedGenre] = useState('')
 
-  useEffect(() => {
-    if (!accessToken) {
-      return
-    }
+  async function fetchRecommendation(event) {
+    event.preventDefault()
+    const response = await fetch(
+      `https://api.spotify.com/v1/recommendations?limit=10&market=ES&seed_artists=${seedArtist}&seed_genres=${seedGenre}&seed_tracks=${seedTrack}`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }
+    )
 
-    async function fetchRecommendation() {
-      const response = await fetch(
-        // `https://api.spotify.com/v1/recommendations?limit=10&market=ES&seed_artists=${seedArtist}&seed_genres=${seedGenre}&seed_tracks=${seedTrack}`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      )
+    const json = await response.json()
 
-      const json = await response.json()
-
-      setRecommendation(json.items)
-      console.log(json)
-    }
-
-    fetchRecommendation()
-  }, [accessToken])
+    setRecommendation(json.items)
+    console.log(json)
+  }
 
   useEffect(() => {
     if (!accessToken) {
@@ -82,19 +75,31 @@ export function CreateAPlaylist() {
     fetchChartTrackMonth()
   }, [accessToken])
 
+  console.log(seedArtist)
+  console.log(seedTrack)
+  console.log(seedGenre)
+  console.log(recommendation)
+
   return (
     <div className="createPlaylist">
       <section className="creatorContainer">
-        <form className="creator">
+        <form onSubmit={fetchRecommendation} className="creator">
           <p>
             <label>Name your playlist:</label>
             <input type="text"></input>
           </p>
           <p>
             <label>Pick one of your Top Artists:</label>
-            <select className="seedArtist">
+            <select
+              className="seedArtist"
+              value={seedArtist}
+              onChange={(event) => {
+                setSeedArtist(event.target.value)
+                console.log(event.target)
+              }}
+            >
               {chartArtistMonth.map((seedArtist) => (
-                <option>{seedArtist.name}</option>
+                <option value={seedArtist.id}>{seedArtist.name}</option>
               ))}
             </select>
           </p>
@@ -102,21 +107,29 @@ export function CreateAPlaylist() {
             <label>Pick one of your Top Tracks:</label>
             <select
               className="seedTrack"
-              value="seedTrack"
-              onChange={this.setSeedArtist}
+              value={seedTrack}
+              onChange={(event) => {
+                setSeedTrack(event.target.value)
+              }}
             >
               {chartTrackMonth.map((seedTrack) => (
-                <option>{seedTrack.name}</option>
+                <option value={seedTrack.id}>{seedTrack.name}</option>
               ))}
             </select>
           </p>
           <label>Pick one of your Top Genres</label>
-          <select className="seedGenre">
+          <select
+            className="seedGenre"
+            value={seedGenre}
+            onChange={(event) => {
+              setSeedGenre(event.target.value)
+            }}
+          >
             {chartArtistMonth.map((seedGenre) => (
               <option>{seedGenre.genres[0]}</option>
             ))}
           </select>
-          <button>Create my playlist</button>
+          <button type="submit">Create my playlist</button>
         </form>
       </section>
     </div>
