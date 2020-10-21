@@ -1,3 +1,4 @@
+import Table from 'react-bootstrap/Table'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -72,6 +73,7 @@ export function Playlist() {
     fetchPlaylistImage()
   }, [])
   console.log()
+  console.log(playlist)
 
   return (
     <div className="onePlaylist">
@@ -82,26 +84,32 @@ export function Playlist() {
           <div className="imageContainer">
             <img src={playlistImage} />
           </div>
-          <ul className="categoryList">
-            <li className="trackCategory">Track</li>
-            <li className="artistCategory">Artist</li>
-            <li className="albumCategory">Album</li>
-          </ul>
-          {playlist.map((track) => (
-            <ul className="track">
-              <div className="trackDiv">
-                <li>{track.track.name}</li>
-              </div>
-              <div className="artistDiv">
-                {track.track.artists.map((artist) => (
-                  <li>{artist.name}</li>
-                ))}
-              </div>
-              <div className="albumDiv">
-                <li>{track.track.album.name}</li>
-              </div>
-            </ul>
-          ))}
+          <div className="tableContainer">
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr className="categoryList">
+                  <th className="trackCategory">Track</th>
+                  <th className="artistCategory">Artist</th>
+                  <th className="albumCategory">Album</th>
+                </tr>
+              </thead>
+              {playlist.map((track) => (
+                <tbody>
+                  <tr className="track">
+                    <td>{track.track.name}</td>
+
+                    <td>
+                      {track.track.artists.map((artist) => (
+                        <span>{artist.name + ' '} </span>
+                      ))}
+                    </td>
+
+                    <td>{track.track.album.name}</td>
+                  </tr>
+                </tbody>
+              ))}
+            </Table>
+          </div>
         </article>
       </section>
     </div>
