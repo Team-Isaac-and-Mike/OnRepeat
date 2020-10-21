@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Table from 'react-bootstrap/Table'
 
 export function CreateAPlaylist() {
   const [recommendation, setRecommendation] = useState([])
@@ -8,6 +9,7 @@ export function CreateAPlaylist() {
   const [seedArtist, setSeedArtist] = useState('')
   const [seedTrack, setSeedTrack] = useState('')
   const [seedGenre, setSeedGenre] = useState('')
+  const [newPlaylistName, setNewPlaylistName] = useState('')
 
   async function fetchRecommendation(event) {
     event.preventDefault()
@@ -22,10 +24,9 @@ export function CreateAPlaylist() {
 
     const json = await response.json()
 
-    setRecommendation(json.items)
-    console.log(json)
+    setRecommendation(json.tracks)
+    // console.log(json)
   }
-
   useEffect(() => {
     if (!accessToken) {
       return
@@ -45,7 +46,7 @@ export function CreateAPlaylist() {
 
       setChartArtistMonth(json.items)
 
-      console.log(json)
+      // console.log(json)
     }
 
     fetchChartArtistMonth()
@@ -69,7 +70,7 @@ export function CreateAPlaylist() {
       const json = await response.json()
 
       setChartTrackMonth(json.items)
-      console.log(json)
+      // console.log(json)
     }
 
     fetchChartTrackMonth()
@@ -86,7 +87,13 @@ export function CreateAPlaylist() {
         <form onSubmit={fetchRecommendation} className="creator">
           <p>
             <label>Name your playlist:</label>
-            <input type="text"></input>
+            <input
+              type="text"
+              onChange={(event) => {
+                setNewPlaylistName(event.target.value)
+                console.log(event.target)
+              }}
+            ></input>
           </p>
           <p>
             <label>Pick one of your Top Artists:</label>
@@ -117,20 +124,59 @@ export function CreateAPlaylist() {
               ))}
             </select>
           </p>
-          <label>Pick one of your Top Genres</label>
-          <select
-            className="seedGenre"
-            value={seedGenre}
-            onChange={(event) => {
-              setSeedGenre(event.target.value)
-            }}
-          >
-            {chartArtistMonth.map((seedGenre) => (
-              <option>{seedGenre.genres[0]}</option>
-            ))}
-          </select>
-          <button type="submit">Create my playlist</button>
+          <p>
+            <label>Pick one of your Top Genres:</label>
+            <select
+              className="seedGenre"
+              value={seedGenre}
+              onChange={(event) => {
+                setSeedGenre(event.target.value)
+              }}
+            >
+              {chartArtistMonth.map((seedGenre) => (
+                <option>{seedGenre.genres[0]}</option>
+              ))}
+            </select>
+          </p>
+          <p>
+            <button className="recommendationButton" type="submit">
+              Create my playlist
+            </button>
+          </p>
         </form>
+
+        <article className="newPlaylist">
+          <h2>{newPlaylistName}</h2>
+
+          <div className="tableContainer">
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr className="categoryList">
+                  <th className="trackCategory">Track</th>
+                  <th className="artistCategory">Artist</th>
+                  <th className="albumCategory">Album</th>
+                </tr>
+              </thead>
+              {recommendation.map((track) => (
+                <tbody>
+                  <tr className="track">
+                    <td>{track.name}</td>
+                    <td>
+                      {track.artists.map((artist) => (
+                        <span>{artist.name + ' '} </span>
+                      ))}
+                    </td>
+
+                    <td>{track.album.name}</td>
+                  </tr>
+                </tbody>
+              ))}
+            </Table>
+          </div>
+          {recommendation.length === 0 ? null : (
+            <button>Generate Playlist</button>
+          )}
+        </article>
       </section>
     </div>
   )

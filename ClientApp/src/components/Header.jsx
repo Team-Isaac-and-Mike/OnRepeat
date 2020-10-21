@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export function Header() {
+  async function PlayListsBox() {
+    const [userInfo, setUserInfo] = useState([])
+    const accessToken = localStorage.getItem('SpotifyAccessToken')
+  }
+
   return (
     <div className="header">
       <header>
