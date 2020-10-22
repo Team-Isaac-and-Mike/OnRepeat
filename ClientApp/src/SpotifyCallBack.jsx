@@ -15,7 +15,7 @@ export function SpotifyAuthCallback() {
       const request = {
         grant_type: 'authorization_code',
         code,
-        redirect_uri: 'https://onrepeat-sdg.herokuapp.com/',
+        redirect_uri: 'https://onrepeat-sdg.herokuapp.com/callback',
       }
 
       const response = await fetch('https://accounts.spotify.com/api/token', {
