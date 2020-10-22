@@ -19,7 +19,7 @@ export function Home() {
   useEffect(() => {
     fetchUserInfo()
   }, [])
-  console.log(JSON)
+  console.log(userInfo.display_name)
 
   return (
     <div className="home">
