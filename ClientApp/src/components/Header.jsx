@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export function Header() {
+  const [userInfo, setUserInfo] = useState([])
+  const accessToken = localStorage.getItem('SpotifyAccessToken')
+
+  async function fetchUserInfo() {
+    const response = await fetch(`https://api.spotify.com/v1/me`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+    const json = await response.json()
+
+    setUserInfo(json.items)
+  }
+
+  console.log(userInfo)
+
   return (
     <div className="header">
       <header>
