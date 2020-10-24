@@ -10,9 +10,60 @@ export function CreateAPlaylist() {
   const [seedTrack, setSeedTrack] = useState('')
   const [seedGenre, setSeedGenre] = useState('')
   const [newPlaylistName, setNewPlaylistName] = useState('')
+  const [userInfo, setUserInfo] = useState([])
+  const [newPLaylistId, setNewPLaylistId] = useState('')
+
+  async function PopulatePlaylist() {
+    const payload = recommendation.map((uri) => uri.uri)
+    console.log(payload)
+    const response = await fetch(
+      `https://api.spotify.com/v1/playlists/${newPLaylistId.id}/tracks`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+          body: JSON.stringify({ uris: payload }),
+        },
+      }
+    )
+  }
+
+  async function CreateAPlaylist() {
+    const response = await fetch(
+      `https://api.spotify.com/v1/users/${userInfo.id}/playlists`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({ name: newPlaylistName }),
+      }
+    )
+    const json = await response.json()
+    setNewPLaylistId(json)
+  }
+
+  async function fetchUserInfo() {
+    const response = await fetch(`https://api.spotify.com/v1/me`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
+    const json = await response.json()
+
+    setUserInfo(json)
+  }
+
+  useEffect(() => {
+    fetchUserInfo()
+  }, [])
+  console.log(userInfo)
 
   async function fetchRecommendation(event) {
     event.preventDefault()
+    CreateAPlaylist()
     const response = await fetch(
       `https://api.spotify.com/v1/recommendations?limit=10&market=ES&seed_artists=${seedArtist}&seed_genres=${seedGenre}&seed_tracks=${seedTrack}`,
       {
@@ -26,6 +77,7 @@ export function CreateAPlaylist() {
 
     setRecommendation(json.tracks)
     // console.log(json)
+    PopulatePlaylist()
   }
   useEffect(() => {
     if (!accessToken) {
@@ -79,7 +131,10 @@ export function CreateAPlaylist() {
   console.log(seedArtist)
   console.log(seedTrack)
   console.log(seedGenre)
-  console.log(recommendation)
+  console.log(recommendation.id)
+  console.log(newPlaylistName)
+  console.log(newPLaylistId)
+  console.log(newPLaylistId.id)
 
   return (
     <div className="createPlaylist">
