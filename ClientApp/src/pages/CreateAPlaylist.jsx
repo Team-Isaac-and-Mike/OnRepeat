@@ -14,16 +14,17 @@ export function CreateAPlaylist() {
   const [newPLaylistId, setNewPLaylistId] = useState('')
 
   async function PopulatePlaylist() {
-    const payload = recommendation.map((uri) => uri.uri)
-    console.log(payload)
+    const uriTracks = recommendation.map((uri) => uri.uri)
+    console.log(uriTracks)
     const response = await fetch(
-      `https://api.spotify.com/v1/playlists/${newPLaylistId.id}/tracks`,
+      ` https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/playlists/${newPLaylistId.id}/tracks`,
       {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
+          origin: 'https://onrepeat-sdg.herokuapp.com',
           Authorization: `Bearer ${accessToken}`,
-          body: JSON.stringify({ uris: payload }),
+          body: JSON.stringify({ uris: uriTracks }),
         },
       }
     )
@@ -64,6 +65,7 @@ export function CreateAPlaylist() {
   async function fetchRecommendation(event) {
     event.preventDefault()
     CreateAPlaylist()
+
     const response = await fetch(
       `https://api.spotify.com/v1/recommendations?limit=10&market=ES&seed_artists=${seedArtist}&seed_genres=${seedGenre}&seed_tracks=${seedTrack}`,
       {
@@ -77,7 +79,7 @@ export function CreateAPlaylist() {
 
     setRecommendation(json.tracks)
     // console.log(json)
-    PopulatePlaylist()
+    // PopulatePlaylist()
   }
   useEffect(() => {
     if (!accessToken) {
@@ -229,7 +231,7 @@ export function CreateAPlaylist() {
             </Table>
           </div>
           {recommendation.length === 0 ? null : (
-            <button>Generate Playlist</button>
+            <button onClick={PopulatePlaylist}>Generate Playlist</button>
           )}
         </article>
       </section>
