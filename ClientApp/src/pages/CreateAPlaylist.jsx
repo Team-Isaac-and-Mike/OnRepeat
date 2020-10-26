@@ -11,23 +11,34 @@ export function CreateAPlaylist() {
   const [seedGenre, setSeedGenre] = useState('')
   const [newPlaylistName, setNewPlaylistName] = useState('')
   const [userInfo, setUserInfo] = useState([])
-  const [newPLaylistId, setNewPLaylistId] = useState('')
+  const [newPlaylistId, setNewPlaylistId] = useState('')
 
   async function PopulatePlaylist() {
-    const uriTracks = recommendation.map((uri) => uri.uri)
-    console.log(uriTracks)
-    const response = await fetch(
-      ` https://cors-anywhere.herokuapp.com/https://api.spotify.com/v1/playlists/${newPLaylistId.id}/tracks`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-          origin: 'https://onrepeat-sdg.herokuapp.com',
-          Authorization: `Bearer ${accessToken}`,
-          body: JSON.stringify({ uris: uriTracks }),
-        },
-      }
-    )
+    const uris = recommendation.map((uri) => uri.uri)
+    console.log(uris)
+    // const response = await fetch(
+    //   ` https://api.spotify.com/v1/playlists/${newPLaylistId.id}/tracks`,
+    //   {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-type': 'application/json',
+
+    //       Authorization: `Bearer ${accessToken}`,
+    //       body: JSON.stringify({ uris: uriTracks }),
+    //     },
+    //   }
+    // )
+    const response = await fetch('/api/SpotifyProxy', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        uris,
+        accessToken,
+        playlistId: newPlaylistId.id,
+      }),
+    })
   }
 
   async function CreateAPlaylist() {
@@ -43,7 +54,7 @@ export function CreateAPlaylist() {
       }
     )
     const json = await response.json()
-    setNewPLaylistId(json)
+    setNewPlaylistId(json)
   }
 
   async function fetchUserInfo() {
@@ -135,8 +146,8 @@ export function CreateAPlaylist() {
   console.log(seedGenre)
   console.log(recommendation.id)
   console.log(newPlaylistName)
-  console.log(newPLaylistId)
-  console.log(newPLaylistId.id)
+  console.log(newPlaylistId)
+  console.log(newPlaylistId.id)
 
   return (
     <div className="createPlaylist">

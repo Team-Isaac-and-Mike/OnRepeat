@@ -6,7 +6,7 @@ export function LoginButton() {
     const params = new URLSearchParams({
       client_id: 'a89620779d994eb7b01ff6ee1bb88940',
       response_type: 'code',
-      redirect_uri: 'https://onrepeat-sdg.herokuapp.com/callback',
+      redirect_uri: 'https://localhost:5001/callback',
       scope:
         'user-read-private user-read-email playlist-read-private user-top-read playlist-modify-public playlist-modify-private',
       state: 'random number',
