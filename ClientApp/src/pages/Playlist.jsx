@@ -72,7 +72,6 @@ export function Playlist() {
   useEffect(() => {
     fetchPlaylistImage()
   }, [])
-  console.log()
   console.log(playlist)
 
   return (
