@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { logoutOfSpotify } from '../auth.js'
 
 export function Header() {
   return (
@@ -21,6 +22,14 @@ export function Header() {
             <Link to="/charts">My Charts</Link>
           </li>
         </ul>
+        <button
+          onClick={() => {
+            logoutOfSpotify()
+            window.location = '/'
+          }}
+        >
+          Log Out
+        </button>
       </nav>
     </div>
   )

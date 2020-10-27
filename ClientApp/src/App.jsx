@@ -9,13 +9,16 @@ import { MyCharts } from './pages/MyCharts'
 import { CreateAPlaylist } from './pages/CreateAPlaylist'
 import { LoginButton } from './LoginButton'
 import { SpotifyAuthCallback } from './SpotifyCallBack'
+import { isLoggedInOnSpotify } from './auth'
 
 export function App() {
+  const isLoggedIn = isLoggedInOnSpotify()
   return (
     <main>
       <Header />
 
-      <LoginButton />
+      {isLoggedIn ? null : <LoginButton />}
+      {/* <LoginButton /> */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/playlists" component={MyPlaylists} />

@@ -26,6 +26,10 @@ export function PlayListsBox() {
           Authorization: `Bearer ${accessToken}`,
         },
       })
+      if (response.status === 401) {
+        localStorage.setItem('SpotifyAccessToken', '')
+        // localStorage.setItem('SpotifyRefreshToken', '')
+      }
       const json = await response.json()
       console.log(json)
       if (json.items) {
