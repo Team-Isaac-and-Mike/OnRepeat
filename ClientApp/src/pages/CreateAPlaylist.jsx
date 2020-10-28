@@ -67,7 +67,7 @@ export function CreateAPlaylist() {
     CreateAPlaylist()
 
     const response = await fetch(
-      `https://api.spotify.com/v1/recommendations?limit=10&market=ES&seed_artists=${seedArtist}&seed_genres=${seedGenre}&seed_tracks=${seedTrack}`,
+      `https://api.spotify.com/v1/recommendations?limit=20&market=ES&seed_artists=${seedArtist}&seed_genres=${seedGenre}&seed_tracks=${seedTrack}`,
       {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -195,7 +195,7 @@ export function CreateAPlaylist() {
           </p>
           <p>
             <button className="recommendationButton" type="submit">
-              Create my playlist
+              Recommend a Playlist
             </button>
           </p>
         </form>
@@ -229,7 +229,7 @@ export function CreateAPlaylist() {
             </Table>
           </div>
           {recommendation.length === 0 ? null : (
-            <button onClick={PopulatePlaylist}>Generate Playlist</button>
+            <button onClick={PopulatePlaylist}>Create this Playlist</button>
           )}
         </article>
       </section>

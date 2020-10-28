@@ -19,7 +19,7 @@ export function App() {
       {/* <LoginButton /> */}
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/playlists" component={MyPlaylists} />
+        {/* <Route exact path="/playlists" component={MyPlaylists} /> */}
         <Route exact path="/playlist/:id" component={Playlist} />
         <Route exact path="/charts" component={MyCharts} />
         <Route exact path="/create" component={CreateAPlaylist} />

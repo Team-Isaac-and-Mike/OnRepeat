@@ -70,6 +70,7 @@
       // border: red solid 1px;
       display: flex;
       align-items: center;
+      padding-bottom: 5px;
       p {
         margin-bottom: 0px;
         margin-right: 3px;
@@ -85,7 +86,4 @@
       }
     }
   }
-}
-a:hover {
-  text-decoration: green;
 }

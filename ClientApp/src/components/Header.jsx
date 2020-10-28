@@ -52,14 +52,14 @@ export function Header() {
               />
               <p> {userInfo} </p>
             </div>
-            <a
+            <button
               onClick={() => {
                 logoutOfSpotify()
                 window.location = '/'
               }}
             >
               Log Out
-            </a>
+            </button>
           </div>
         ) : (
           <div className="userDiv">
@@ -73,7 +73,7 @@ export function Header() {
             <Link to="/">Home</Link>
           </li>
           <li className="navItem">
-            <Link to="/playlists"> My Playlists </Link>
+            <Link to="/create">Create a Playlist </Link>
           </li>
           <li className="navItem">
             <Link to="/charts">My Charts</Link>
