@@ -78,8 +78,6 @@ export function CreateAPlaylist() {
     const json = await response.json()
 
     setRecommendation(json.tracks)
-    // console.log(json)
-    // PopulatePlaylist()
   }
   useEffect(() => {
     if (!accessToken) {
@@ -122,7 +120,6 @@ export function CreateAPlaylist() {
       const json = await response.json()
 
       setChartTrackMonth(json.items)
-      // console.log(json)
     }
 
     fetchChartTrackMonth()
