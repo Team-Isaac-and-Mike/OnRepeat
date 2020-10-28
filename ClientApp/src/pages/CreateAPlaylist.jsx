@@ -16,18 +16,7 @@ export function CreateAPlaylist() {
   async function PopulatePlaylist() {
     const uris = recommendation.map((uri) => uri.uri)
     console.log(uris)
-    // const response = await fetch(
-    //   ` https://api.spotify.com/v1/playlists/${newPLaylistId.id}/tracks`,
-    //   {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-type': 'application/json',
 
-    //       Authorization: `Bearer ${accessToken}`,
-    //       body: JSON.stringify({ uris: uriTracks }),
-    //     },
-    //   }
-    // )
     const response = await fetch('/api/SpotifyProxy', {
       method: 'POST',
       headers: {
@@ -110,8 +99,6 @@ export function CreateAPlaylist() {
       const json = await response.json()
 
       setChartArtistMonth(json.items)
-
-      // console.log(json)
     }
 
     fetchChartArtistMonth()

@@ -1,13 +1,12 @@
 import React from 'react'
 import './styles/main.scss'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { Header } from './components/Header'
 import { Home } from './pages/Home'
 import { MyPlaylists } from './pages/MyPlaylists'
 import { Playlist } from './pages/Playlist'
 import { MyCharts } from './pages/MyCharts'
 import { CreateAPlaylist } from './pages/CreateAPlaylist'
-import { LoginButton } from './LoginButton'
 import { SpotifyAuthCallback } from './SpotifyCallBack'
 import { isLoggedInOnSpotify } from './auth'
 
@@ -17,7 +16,6 @@ export function App() {
     <main>
       <Header />
 
-      {isLoggedIn ? null : <LoginButton />}
       {/* <LoginButton /> */}
       <Switch>
         <Route exact path="/" component={Home} />
