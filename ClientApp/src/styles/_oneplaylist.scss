@@ -68,6 +68,28 @@
     justify-content: center;
     flex-direction: column;
   }
+
+  .buttonDiv {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  .deleteButton {
+    background-color: red;
+    border-color: red;
+  }
+  .renameDiv {
+    display: flex;
+    justify-content: center;
+  }
+
+  label {
+    padding-right: 3px;
+  }
+
+  .nameButton {
+    margin-left: 3px;
+  }
 }
 // ul {
 //   list-style: none;

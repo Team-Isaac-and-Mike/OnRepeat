@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table'
+import { useHistory } from 'react-router-dom'
 
 export function CreateAPlaylist() {
+  const history = useHistory()
   const [recommendation, setRecommendation] = useState([])
   const [chartArtistMonth, setChartArtistMonth] = useState([])
   const [chartTrackMonth, setChartTrackMonth] = useState([])
@@ -28,6 +30,7 @@ export function CreateAPlaylist() {
         playlistId: newPlaylistId.id,
       }),
     })
+    history.push('/')
   }
 
   async function CreateAPlaylist() {
@@ -225,9 +228,11 @@ export function CreateAPlaylist() {
               ))}
             </Table>
           </div>
-          {recommendation.length === 0 ? null : (
-            <button onClick={PopulatePlaylist}>Create this Playlist</button>
-          )}
+          <div className="buttonDiv">
+            {recommendation.length === 0 ? null : (
+              <button onClick={PopulatePlaylist}>Create this Playlist</button>
+            )}
+          </div>
         </article>
       </section>
     </div>
