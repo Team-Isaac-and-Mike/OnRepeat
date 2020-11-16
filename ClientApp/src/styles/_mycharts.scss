@@ -63,8 +63,20 @@
   }
 }
 
+.numberList {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
 @media all and (min-width: 800px) {
   .myCharts {
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 350px;
+    }
     .chartsSection {
       // background-color: red;s
       display: flex;
@@ -83,8 +95,22 @@
   }
 }
 
-.numberList {
-  display: flex;
-  align-items: center;
-  padding-right: 10px;
+@media (max-width: 800px) {
+  li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .myCharts {
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+  }
 }

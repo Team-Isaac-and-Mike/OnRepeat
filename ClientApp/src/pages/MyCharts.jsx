@@ -182,6 +182,9 @@ export function MyCharts() {
                   {chartArtistMonth.map((monthArtist) => (
                     <li>{monthArtist.name}</li>
                   ))}
+                  {/* <li>
+                    testtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+                  </li> */}
                 </ul>
                 {/* <ul className="topList"> */}
                 {/* {chartArtistMonth.map((monthArtistImage) => (
