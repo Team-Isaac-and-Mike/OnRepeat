@@ -57,7 +57,7 @@
 .playlistTitle {
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 1000px) {
   .home {
     .playlistContainer {
       display: grid;
@@ -66,6 +66,33 @@
       justify-items: center;
       align-items: center;
       max-width: 1200px;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 600px) {
+  main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .home {
+    .playlistContainer {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .home {
+    .playlistContainer {
+      display: flex;
+      justify-content: center;
     }
   }
 }

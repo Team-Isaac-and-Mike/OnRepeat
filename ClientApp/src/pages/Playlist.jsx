@@ -14,7 +14,7 @@ export function Playlist() {
   const accessToken = localStorage.getItem('SpotifyAccessToken')
   const [newName, setNewName] = useState('')
 
-  async function fetchPlaylist() {
+  async function fetchPlaylistTracks() {
     const response = await fetch(
       `https://api.spotify.com/v1/playlists/${id}/tracks`,
       {
@@ -55,7 +55,7 @@ export function Playlist() {
     history.go(0)
   }
 
-  async function fetchPlaylists() {
+  async function fetchPlaylist() {
     const response = await fetch(`https://api.spotify.com/v1/playlists/${id}`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -94,7 +94,7 @@ export function Playlist() {
   console.log(playlist)
 
   useEffect(() => {
-    fetchPlaylists()
+    fetchPlaylistTracks()
   }, [])
   console.log(playlists)
 
