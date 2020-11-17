@@ -87,3 +87,10 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .userDiv {
+    display: flex;
+    flex-direction: row;
+  }
+}
