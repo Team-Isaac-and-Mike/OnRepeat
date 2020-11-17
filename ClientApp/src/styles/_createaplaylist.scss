@@ -21,6 +21,7 @@
     form {
       display: flex;
       justify-content: center;
+      flex-direction: column;
 
       button {
         justify-content: center;
@@ -41,5 +42,52 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .createPlaylist {
+    select {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 250px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .createPlaylist {
+    .seedName {
+      max-width: 300px;
+    }
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+    .creator {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-left: 0px;
+
+      .recommendationButton {
+        margin-left: 0px;
+      }
+    }
+    option {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+
+    select {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
   }
 }

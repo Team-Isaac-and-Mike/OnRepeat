@@ -143,6 +143,7 @@ export function CreateAPlaylist() {
           <p>
             <label>Name your playlist:</label>
             <input
+              className="seedName"
               type="text"
               onChange={(event) => {
                 setNewPlaylistName(event.target.value)
