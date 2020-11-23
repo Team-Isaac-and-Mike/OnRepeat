@@ -37,7 +37,6 @@ export function Header() {
   return (
     <div className="header">
       <header>
-        <div></div>
         <div className="headerDiv">
           <Link to="/">
             <h1>OnRepeat</h1>
