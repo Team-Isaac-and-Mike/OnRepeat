@@ -1,7 +1,14 @@
+
 {
   "name": "OnRepeat",
   "private": "true",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@auth0/auth0-react": "^1.1.0"
   }
+  
+  
 }
+
